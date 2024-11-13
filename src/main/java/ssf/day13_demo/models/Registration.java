@@ -1,9 +1,19 @@
 package ssf.day13_demo.models;
 
+import jakarta.validation.constraints.*;
+
 public class Registration {
 
+    @NotNull(message="Name cannot be null")
+    @NotEmpty(message="Name cannot be empty")
+    @Size(min=2, max=32, message="Name must be between 2 and 32 characters")
     private String name;
+
+    @NotNull(message="Email cannot be null")
+    @NotEmpty(message="Email cannot be empty")
+    @Email(message="Must be valid email")
     private String email;
+
     private String comments;
 
     // property name - name
