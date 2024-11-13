@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+
+    <h1>You have been registered</h1>
+    <h2>Please check your email: <code data-th-text="${reg.email}"></code></h2>
+
+    <div data-th-object="${reg}">
+        <!-- data-th-field: for input, data-th-text: for text results -->
+        <h2>Please check your email: <code data-th-text="*{email}"></code></h2>
+    </div>
+    
+</body>
+</html>

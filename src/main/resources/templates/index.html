@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+</head>
+<body>
+
+    <h1>Registration</h1>
+
+    <!--
+        A HTML form can onlu have the following 2 methods:
+            POST, GET
+    -->
+
+    <!-- Fields reference object: data-th-object, data-th-field -->
+    <!-- Set "reg" [initialized in IndexController] members through form inputs -->
+    <form method="POST" action="/registration/obj" data-th-object="${reg}">
+        <input type="hidden" name="passphrase" value="this is a secret">
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td>
+                    <!-- setName(), getName() -->
+                    <input type="text" data-th-field="*{name}">
+                </td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td>
+                    <!-- setEmail(), getEmail() -->
+                    <input type="email" data-th-field="*{email}">
+                </td>
+            </tr>
+            <tr>
+                <td>Comments: </td>
+                <td>
+                    <!-- setComments(), getComments() -->
+                    <textarea data-th-field="*{comments}" rows="5" cols="30"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">Add!</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>
